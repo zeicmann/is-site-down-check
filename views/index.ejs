@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Is site down?</title>
+    <link rel="icon" href="/icon">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .parent {
+            width: 100%;
+            height: 100%;
+            display: table;
+            text-align: center;
+        }
+
+        .parent>.child {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <section class="parent">
+        <div class="child">
+            <h1>Is site down: <%= isDown %>
+            </h1>
+
+            <% if(isDown==='Yes' ){ %>
+                <div>down for <%= dTime %>
+                </div>
+                <div>down since: <%= downFrom %>
+                </div>
+                <div>last seen live: <%= upFrom %>
+                </div>
+                <% } else{ %>
+                    <div>up for <%= uTime %>
+                    </div>
+                    <div>up since: <%= upFrom %>
+                    </div>
+                    <div>last time down: <%= downFrom %>
+                    </div>
+                    <% } %>
+                <div>Ping success rate: <%= successRate %></div>
+        </div>
+    </section>
+    <script>
+        window.setTimeout(function () {
+            window.location.reload();
+        }, 30000);
+    </script>
+</body>
+
+</html>

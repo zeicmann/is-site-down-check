@@ -1,0 +1,21 @@
+{
+  "name": "is-site-down-check",
+  "version": "0.0.1",
+  "description": "Simple site health check with web UI.",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node --inspect=5555 server.js",
+    "service": "node index.js",
+    "server": "node server.js"
+  },
+  "author": "Alex Ivanov",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "node-schedule": "^2.0.0",
+    "request": "^2.88.2"
+  }
+}
